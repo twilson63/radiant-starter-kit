@@ -1,4 +1,2 @@
 log
 tmp
-db/*.sqlite3.db
-config/database.yml
