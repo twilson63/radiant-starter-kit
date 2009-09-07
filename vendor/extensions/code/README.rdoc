@@ -1,0 +1,26 @@
+= Code Extension
+
+Extension which provides support for code highlighting to Radiant CMS.
+
+= Usage
+
+Somewhere in head of your pages put tags <tt><r:include_code_stylesheets /></tt> and <tt><r:include_code_javascripts /></tt>. These tags will include code stylesheets for selected theme and required javascripts (if you use client-side library). Also, you may not to use these tags, but include required files manually (for example, if you are using your own customized theme or javascript library).
+
+In your pages put code between <tt><r:code></tt> and <tt></r:code></tt> tags. Supported attributes:
+* <tt>lang</tt> - Code language. Set of supported languages depends on used code processor.
+* <tt>lines</tt> - Render line numbers: <tt>'table'</tt>,<tt>'inline'</tt> or <tt>nil</tt>
+
+= Configuration
+
+You may specify preferred code processor in <b><tt>code.processor</tt></b> setting. Currently supported processors:
+* <tt>ultraviolet</tt> - http://ultraviolet.rubyforge.org - syntax highlighting gem using texmate syntax files and so supporting a huge set of languages.
+* <tt>coderay</tt> - http://coderay.rubychan.de - fast syntax highlighting gem with no dependencies, and ability to inline styles (no stylesheets needed).
+* <tt>syntax</tt> - http://syntax.rubyforge.org
+* <tt>highlight_js</tt> - http://softwaremaniacs.org/soft/highlight - excellent client-side library by softwaremaniacs.org.
+
+You may specify theme in <b><tt>code.theme</tt></b> setting. Supported themes depends on selected processor.
+
+In <b><tt>code.language</tt></b> setting you may specify default language, which is supposed in tags without <tt>lang</tt> attribute. If there are no such setting, ruby language is used.
+
+Copyright (c) 2009 Alexey Noskov
+
